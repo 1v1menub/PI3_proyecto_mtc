@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Example</title>
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+    #a {
+                position:fixed;
+                height: 100%;
+                width: 100%;
+                content: "";
+                background: url("https://cdn.discordapp.com/attachments/730298676626456627/917965587588743189/aeaaa.png");
+                /* opacity: 0.3; */
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-size: cover;
+            }
+            #xd{
+              margin-left: 500px;
+              margin-right: 500px;
+            } 
+            h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 35px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+            p { color: #222; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; line-height: 24px; margin: 0 0 14px; }
+            table {
+                  border-collapse: collapse;
+                  border-spacing: 0;
+                  line-height: 2;
+                  margin-bottom: 40px;
+                  width: 100%;
+                  background-color: #def0fb;
+              }
+                   
+              td, th {
+                font-family: 'Open Sans';
+                
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+              }
+              tr:nth-child(odd) {
+                background-color: #dffdff;
+              }
+    </style>
+    
+  </head>
+  <body id="a">
+    <h1>Detalles</h1>
+    <div id="xd">
+    <table>
+      <tbody>
+        <tr>
+          <td> <b>Id:</b></td>
+          <td>{{id}}</td>
+        </tr>
+        <tr>
+          <td> <b>Fecha:</b> </td>
+          <td>{{'/'.join(date.split('-')[0:3]) }}</td>
+        </tr> 
+        <tr>
+          <td> <b>Hora:</b></td>
+          <td>{{':'.join(date.split('-')[3:6]) }}</td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+    <video class="center" width="1280" height="720" controls>
+      <source src={{ url_for('static', filename= video) }} type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </body>
+</html>
